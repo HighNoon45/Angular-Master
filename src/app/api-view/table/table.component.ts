@@ -1,4 +1,4 @@
-import {Component, input} from '@angular/core';
+import {Component, input, InputSignal} from '@angular/core';
 import {ApiViewTableHeaderComponent} from './api-view-table-header/api-view-table-header.component';
 import {CellModel, HeaderModel, RowModel} from './table.model';
 import {ApiViewTableRowsComponent} from './api-view-table-rows/api-view-table-rows.component';
