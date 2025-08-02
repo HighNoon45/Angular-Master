@@ -40,11 +40,11 @@ export class ApiViewTableHeaderComponent {
   protected description: string;
   protected type : string;
 
-  constructor(activityHeaderNames: CellModel<string>) {
+  constructor(activityHeaderNames: HeaderModel) {
 
-    this.id = activityHeaderNames.cells[0];
-    this.name = activityHeaderNames.cells[1];
-    this.description = activityHeaderNames.cells[2];
-    this.type = activityHeaderNames.cells[3];
+    this.id = activityHeaderNames.headerNames[0];
+    this.name = activityHeaderNames.headerNames[1];
+    this.description = activityHeaderNames.headerNames[2];
+    this.type = activityHeaderNames.headerNames[3];
   }
 }

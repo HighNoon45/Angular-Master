@@ -3,20 +3,13 @@
   public rows: RowModel<T>[] = [];
 }*/
 
-export class HeaderModel{
-  private readonly isHeader : boolean = true;
-  public headerNames : string[] = [];
+export class HeaderModel {
+  private readonly isHeader: boolean = true;
+  public headerNames: string[] = [];
 
-  constructor(headerNames? : string[]) {}
-
-/*  public setHeaderNames (Cells: CellModel<T>[]) {
-    this.cells = Cells;
+  constructor(headerNames?: string[]) {
   }
-  public getHeaderNames ():CellModel<T>[] {
-    return this.cells;
-  }*/
 }
-
 
 export class RowModel<T> {
   public isHeader: boolean = false;
@@ -25,8 +18,8 @@ export class RowModel<T> {
 }
 
 export class CellModel<T>{
-  public cells : T[] = [];
-  constructor (public Cells: T[]) {
+  public cells : T;
+  constructor (public Cells: T) {
     this.cells = Cells;
   }
 }

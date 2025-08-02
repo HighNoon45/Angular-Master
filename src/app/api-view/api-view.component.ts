@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {NgOptimizedImage} from '@angular/common';
-import {TableComponent} from './table/table.component';
+import {ApiViewTableComponent} from './table/table.component';
 import {IActivity} from './api-view-models/i-activity';
 import {ApiViewRepositoryService} from './api-view-services/api-view-repository.service';
 import {AppDataService} from '../app-services/app-data-service';
@@ -12,7 +12,7 @@ import {ApiViewTableHeaderComponent} from './table/api-view-table-header/api-vie
   selector: 'app-api-view',
   imports: [
     NgOptimizedImage,
-    TableComponent,
+    ApiViewTableComponent,
     ApiViewCrudlFormComponent,
     ApiViewTableHeaderComponent
   ],

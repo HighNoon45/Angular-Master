@@ -5,14 +5,14 @@ import {ApiViewTableRowsComponent} from './api-view-table-rows/api-view-table-ro
 import {IActivity} from '../api-view-models/i-activity';
 
 @Component({
-  selector: 'app-activity-table',
+  selector: 'app-api-view-table',
   imports: [
     ApiViewTableHeaderComponent
   ],
   template: `
     <app-api-view-table-header class="activity-elements-headline d-flex flex-row"></app-api-view-table-header>
-    @for(activity of activityList; track  $index){
-      <app-activity-table [activityElement]="activityTableRows"></app-activity-table>
+    @for(object of objectList; track  $index){
+      <app-api-view-table [rowObject]="TableRows"></app-api-view-table>
     }
   `,
 
@@ -22,17 +22,17 @@ import {IActivity} from '../api-view-models/i-activity';
     }
   `
 })
-export class ActivityTableComponent {
+export class ApiViewTableComponent {
 private  TableHeader: HeaderModel = new HeaderModel(["ID", "Name","Description","Type"]);
 private apiViewTableHeaderComponent: ApiViewTableHeaderComponent = new ApiViewTableHeaderComponent(this.TableHeader);
 
-protected TableRows: RowModel;
+protected TableRows: RowModel<IActivity>;
 private apiViewTableRowsComponent: ApiViewTableRowsComponent = new ApiViewTableRowsComponent();
 
-constructor(public HeaderModel: HeaderModel, public RowModel:RowModel,private ApiViewTableHeaderComponent: ApiViewTableHeaderComponent, private ApiViewTableRowsComponent:ApiViewTableRowsComponent) {
+constructor(public HeaderModel: HeaderModel, public RowModel:RowModel<IActivity>,private ApiViewTableHeaderComponent: ApiViewTableHeaderComponent, private ApiViewTableRowsComponent:ApiViewTableRowsComponent) {
   this.ApiViewTableHeaderComponent = this.apiViewTableHeaderComponent;
   this.ApiViewTableRowsComponent = this.apiViewTableRowsComponent;
-  this.activityTableHeader = HeaderModel;
+  this.TableHeader = HeaderModel;
   this.TableRows = RowModel;
   }
 }
