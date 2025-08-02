@@ -23,16 +23,16 @@ import {IActivity} from '../api-view-models/i-activity';
   `
 })
 export class ActivityTableComponent {
-private  activityTableHeader: HeaderModel<string> = new CellModel([{text:"ID"},{text:"Name"},{text:"Description"},{text:"Type"}]);
-private apiViewTableHeaderComponent: ApiViewTableHeaderComponent = new ApiViewTableHeaderComponent(this.activityTableHeader);
+private  TableHeader: HeaderModel = new HeaderModel(["ID", "Name","Description","Type"]);
+private apiViewTableHeaderComponent: ApiViewTableHeaderComponent = new ApiViewTableHeaderComponent(this.TableHeader);
 
-protected activityTableRows: RowModel;
+protected TableRows: RowModel;
 private apiViewTableRowsComponent: ApiViewTableRowsComponent = new ApiViewTableRowsComponent();
 
 constructor(public HeaderModel: HeaderModel, public RowModel:RowModel,private ApiViewTableHeaderComponent: ApiViewTableHeaderComponent, private ApiViewTableRowsComponent:ApiViewTableRowsComponent) {
   this.ApiViewTableHeaderComponent = this.apiViewTableHeaderComponent;
   this.ApiViewTableRowsComponent = this.apiViewTableRowsComponent;
   this.activityTableHeader = HeaderModel;
-  this.activityTableRows = RowModel;
+  this.TableRows = RowModel;
   }
 }
