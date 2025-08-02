@@ -1,6 +1,6 @@
 import {Component, input, InputSignal} from '@angular/core';
 import {IActivity} from '../../api-view-models/i-activity';
-import {ActivityTableComponent} from '../activity-table.component';
+import {TableComponent} from '../table.component';
 
 
 @Component({

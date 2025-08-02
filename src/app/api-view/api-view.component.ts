@@ -1,18 +1,18 @@
 import {Component} from '@angular/core';
 import {NgOptimizedImage} from '@angular/common';
-import {ActivityTableComponent} from './activity-table/activity-table.component';
+import {TableComponent} from './table/table.component';
 import {IActivity} from './api-view-models/i-activity';
 import {ApiViewRepositoryService} from './api-view-services/api-view-repository.service';
 import {AppDataService} from '../app-services/app-data-service';
 import {ApiViewCrudlFormComponent} from './api-view-crudl-form/api-view-crudl-form.component';
-import {ApiViewTableHeaderComponent} from './activity-table/api-view-table-header/api-view-table-header.component';
+import {ApiViewTableHeaderComponent} from './table/api-view-table-header/api-view-table-header.component';
 
 
 @Component({
   selector: 'app-api-view',
   imports: [
     NgOptimizedImage,
-    ActivityTableComponent,
+    TableComponent,
     ApiViewCrudlFormComponent,
     ApiViewTableHeaderComponent
   ],
