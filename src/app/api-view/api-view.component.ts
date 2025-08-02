@@ -11,10 +11,8 @@ import {ApiViewTableHeaderComponent} from './table/api-view-table-header/api-vie
 @Component({
   selector: 'app-api-view',
   imports: [
-    NgOptimizedImage,
     ApiViewTableComponent,
-    ApiViewCrudlFormComponent,
-    ApiViewTableHeaderComponent
+    ApiViewCrudlFormComponent
   ],
   templateUrl: './api-view.component.html',
   providers: [ApiViewRepositoryService, AppDataService],

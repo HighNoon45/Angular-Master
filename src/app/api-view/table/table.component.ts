@@ -12,7 +12,7 @@ import {IActivity} from '../api-view-models/i-activity';
   template: `
     <app-api-view-table-header class="activity-elements-headline d-flex flex-row"></app-api-view-table-header>
     @for(object of objectList; track  $index){
-      <app-api-view-table [rowObject]="TableRows"></app-api-view-table>
+      <app-api-view-table [rowObject]="object"></app-api-view-table>
     }
   `,
 
@@ -26,13 +26,20 @@ export class ApiViewTableComponent {
 private  TableHeader: HeaderModel = new HeaderModel(["ID", "Name","Description","Type"]);
 private apiViewTableHeaderComponent: ApiViewTableHeaderComponent = new ApiViewTableHeaderComponent(this.TableHeader);
 
-protected TableRows: RowModel<IActivity>;
-private apiViewTableRowsComponent: ApiViewTableRowsComponent = new ApiViewTableRowsComponent();
+public rowObject : InputSignal<RowModel<IActivity>> = input.required<RowModel<IActivity>>()
 
-constructor(public HeaderModel: HeaderModel, public RowModel:RowModel<IActivity>,private ApiViewTableHeaderComponent: ApiViewTableHeaderComponent, private ApiViewTableRowsComponent:ApiViewTableRowsComponent) {
+protected objectList: RowModel<IActivity>[] | undefined;
+private apiViewTableRowsComponent: ApiViewTableRowsComponent = new ApiViewTableRowsComponent(this.rowObject);
+constructor( private ApiViewTableHeaderComponent: ApiViewTableHeaderComponent, private ApiViewTableRowsComponent:ApiViewTableRowsComponent) {
   this.ApiViewTableHeaderComponent = this.apiViewTableHeaderComponent;
   this.ApiViewTableRowsComponent = this.apiViewTableRowsComponent;
-  this.TableHeader = HeaderModel;
-  this.TableRows = RowModel;
   }
+
+
+/*  constructor(public HeaderModel: HeaderModel, public RowModel:RowModel<IActivity>,private ApiViewTableHeaderComponent: ApiViewTableHeaderComponent, private ApiViewTableRowsComponent:ApiViewTableRowsComponent) {
+    this.ApiViewTableHeaderComponent = this.apiViewTableHeaderComponent;
+    this.ApiViewTableRowsComponent = this.apiViewTableRowsComponent;
+    this.TableHeader = HeaderModel;
+    this.TableRows = RowModel;
+  }*/
 }

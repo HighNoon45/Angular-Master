@@ -18,8 +18,5 @@ export class RowModel<T> {
 }
 
 export class CellModel<T>{
-  public cells : T;
-  constructor (public Cells: T) {
-    this.cells = Cells;
-  }
+  public cells? : T;
 }
