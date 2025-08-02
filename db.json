@@ -1,0 +1,34 @@
+{
+  "activities": [
+    {
+      "activityId": "act-001",
+      "activityName": "Morning Yoga",
+      "activityType": "Exercise",
+      "activityDescription": "A gentle yoga session to start the day with energy."
+    },
+    {
+      "activityId": "act-002",
+      "activityName": "Team Standup",
+      "activityType": "Meeting",
+      "activityDescription": "Daily sync-up with the development team to discuss progress and blockers."
+    },
+    {
+      "activityId": "act-003",
+      "activityName": "Code Review",
+      "activityType": "Work",
+      "activityDescription": "Review code submissions for quality and adherence to coding standards."
+    },
+    {
+      "activityId": "act-004",
+      "activityName": "Client Call",
+      "activityType": "Communication",
+      "activityDescription": "Weekly call with the client to discuss project updates and gather feedback."
+    },
+    {
+      "activityId": "act-005",
+      "activityName": "Lunch Break",
+      "activityType": "Break",
+      "activityDescription": "Time to relax and eat lunch."
+    }
+  ]
+}
